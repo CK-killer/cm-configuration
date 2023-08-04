@@ -1,0 +1,176 @@
+% ==================================
+% Fancy Packages
+% ==================================
+\usepackage{color,xcolor,tcolorbox,framed} %颜色
+\usepackage{shadowtext} %字体阴影效果
+\usepackage[nottoc]{tocbibind} %在目录中加入目录项本身、参考文献、索引等项目
+\usepackage[framemethod=tikz]{mdframed} %花里胡哨的框框
+\usepackage{wallpaper} % 背景图片
+\usepackage{titlesec} % 设置标题字体
+
+%字体阴影
+\shadowoffset{2pt}
+\shadowcolor{purple! 10! gray}
+% ====================================================================
+% 新定理
+% ====================================================================
+\theoremstyle{definition}
+%\newtheorem{remark}{Remark}
+%\newtheorem{review}{Review}
+%\newtheorem{note}{Note}
+%\newtheorem{exercise}{Exercise}
+%\newtheorem{example}{Example}
+\newtheorem{pf}{Proof}
+%\newtheorem{question}{Question}
+\newtheorem{answer}{Answer}
+
+\mdfsetup{skipabove=\topskip,skipbelow=\topskip}
+% 定义
+\mdfdefinestyle{defi-style}{%
+linecolor=orange,middlelinewidth=2pt,%
+frametitlerule=true,%
+apptotikzsetting={\tikzset{mdfframetitlebackground/.append style={%
+shade,right color=white, left color=pink!20}}},
+frametitlerulecolor=red!60,
+frametitlerulewidth=1pt,
+innertopmargin=\topskip,
+}
+\mdtheorem[style=defi-style]{definition}{Definition}
+% 引理
+\mdfdefinestyle{lemma-style}{%
+linecolor=blue!60,middlelinewidth=2pt,%
+frametitlerule=true,%
+apptotikzsetting={\tikzset{mdfframetitlebackground/.append style={%
+shade,right color=white, left color=blue!20}}},
+frametitlerulecolor=red!60,
+frametitlerulewidth=1pt,
+innertopmargin=\topskip,
+}
+\mdtheorem[style=lemma-style]{lemma}{Lemma}
+% 定理
+\mdfdefinestyle{prop-style}{%
+linecolor=cyan,middlelinewidth=2pt,%
+frametitlerule=true,%
+apptotikzsetting={\tikzset{mdfframetitlebackground/.append style={%
+shade,right color=white, left color=cyan!20}}},
+frametitlerulecolor=red!60,
+frametitlerulewidth=1pt,
+innertopmargin=\topskip,
+}
+\mdtheorem[style=prop-style]{proposition}{Propositon}
+% 推论
+\mdfdefinestyle{coro-style}{%
+linecolor=teal,middlelinewidth=2pt,%
+frametitlerule=true,%
+apptotikzsetting={\tikzset{mdfframetitlebackground/.append style={%
+shade,right color=white, left color=teal!20}}},
+frametitlerulecolor=red!60,
+frametitlerulewidth=1pt,
+innertopmargin=\topskip,
+}
+\mdtheorem[style=coro-style]{corollary}{Corollary}
+% claim
+\mdfdefinestyle{claim-style}{%
+linecolor=purple,middlelinewidth=2pt,%
+frametitlerule=true,%
+apptotikzsetting={\tikzset{mdfframetitlebackground/.append style={%
+shade,right color=white, left color=purple!20}}},
+frametitlerulecolor=red!60,
+frametitlerulewidth=1pt,
+innertopmargin=\topskip,
+}
+\mdtheorem[style=claim-style]{claim}{Claim}
+
+% remark,review,note,claim
+\definecolor{remark-color}{RGB}{242,181,202} %remark背景颜色
+\definecolor{review-color}{RGB}{234,230,170} %review背景颜色
+\definecolor{exercise-color}{RGB}{226,221,242} %exer背景颜色
+\definecolor{example-color}{RGB}{208,222,203} %example背景颜色
+% remark
+\mdfdefinestyle{remark-style}{%
+    rightline=false,
+    innerleftmargin=10,
+    innerrightmargin=10,
+    outerlinewidth=3pt,
+    topline=false,
+    bottomline=false,
+    skipabove=\topsep,
+    skipbelow=\topsep,
+    linewidth=3pt,
+    %backgroundcolor = probcolor!40,
+    apptotikzsetting=
+        {%\tikzset{mdfframetitlebackground/.append style={%
+            \tikzset{mdfbackground/.append style={%
+                    shade,left color=remark-color!60, right color=white}}},
+linecolor=remark-color!70!black,
+outerlinecolor = remark-color!50!black,
+nobreak,
+}
+\mdtheorem[style=remark-style]{remark}{Remark}
+% review
+\mdfdefinestyle{review-style}{%
+    rightline=false,
+    innerleftmargin=10,
+    innerrightmargin=10,
+    outerlinewidth=3pt,
+    topline=false,
+    bottomline=false,
+    skipabove=\topsep,
+    skipbelow=\topsep,
+    linewidth=3pt,
+    %backgroundcolor = probcolor!40,
+    apptotikzsetting=
+        {%\tikzset{mdfframetitlebackground/.append style={%
+            \tikzset{mdfbackground/.append style={%
+                    shade,left color=review-color!60, right color=white}}},
+linecolor=review-color!70!black,
+outerlinecolor = review-color!50!black,
+nobreak,
+}
+\mdtheorem[style=review-style]{review}{Review}
+% 练习
+\mdfdefinestyle{exercise-style}{%
+    rightline=false,
+    innerleftmargin=10,
+    innerrightmargin=10,
+    outerlinewidth=3pt,
+    topline=false,
+    bottomline=false,
+    skipabove=\topsep,
+    skipbelow=\topsep,
+    linewidth=3pt,
+    %backgroundcolor = probcolor!40,
+    apptotikzsetting=
+        {%\tikzset{mdfframetitlebackground/.append style={%
+            \tikzset{mdfbackground/.append style={%
+                    shade,left color=exercise-color!60, right color=white}}},
+linecolor=exercise-color!70!black,
+outerlinecolor = exercise-color!50!black,
+nobreak,
+}
+\mdtheorem[style=exercise-style]{exercise}{Exercise}
+% example
+\mdfdefinestyle{example-style}{%
+    rightline=false,
+    innerleftmargin=10,
+    innerrightmargin=10,
+    outerlinewidth=3pt,
+    topline=false,
+    bottomline=false,
+    skipabove=\topsep,
+    skipbelow=\topsep,
+    linewidth=3pt,
+    %backgroundcolor = probcolor!40,
+    apptotikzsetting=
+        {%\tikzset{mdfframetitlebackground/.append style={%
+            \tikzset{mdfbackground/.append style={%
+                    shade,left color=example-color!60, right color=white}}},
+linecolor=example-color!70!black,
+outerlinecolor = example-color!50!black,
+nobreak,
+}
+\mdtheorem[style=example-style]{example}{Example}
+% ====================================================================
+% 颜色
+% ====================================================================
+\colorlet{shadecolor}{orange!15} %阴影部分颜色
