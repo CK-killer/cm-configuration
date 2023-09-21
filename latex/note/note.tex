@@ -1,0 +1,109 @@
+\documentclass[a4paper,UTF8]{ctexart}
+% ===================================
+% Package (Basic and Simple)(Keep It Simple & Stupid)
+% ===================================
+\usepackage{amsmath, amsthm, amssymb, amsfonts, hyperref, mathrsfs}%美国数学学会的包+?
+\usepackage{geometry} %控制界面
+\usepackage{bookmark}
+\usepackage{fancyhdr} % header & footer
+\usepackage{appendix} % 附录
+\usepackage{tikz} %作图
+\usepackage{graphicx} %插入图片的宏包
+\usepackage{float} %设置图片浮动位置的宏包
+\usepackage{subfigure} %插入多图时用子图显示的宏包
+\usepackage{listings} %引用代码
+\usepackage{physics,mathtools} %物理数学工具
+\usepackage{verbatim} %多行注释工具 \begin{comment} \end{comment}
+\usepackage{framed} %可以画出框框
+\usepackage{hyperref} %可以引用网页
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=blue,      
+    urlcolor=blue,
+    citecolor=cyan,
+} %设置引用链接的颜色
+\usepackage{braket} %Dirac Braket包
+\usepackage[fontset=founder]{ctex}% 自由切换字体宏包
+% Basic Setting
+\geometry{top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm} % 布局要求
+\pagestyle{fancy} % fancy分格
+\fancyhf{} % 清除所有页眉页脚
+\renewcommand\headrulewidth{0.6pt} %重新定义页眉的横线粗细
+\renewcommand\footrulewidth{0.6pt} %重新定义页尾的横线粗细
+\everymath{\displaystyle} % display
+\bibliographystyle{plain} % 引用样式
+%\linespread{1.2} %行间距
+% Windows font
+% 中文默认字体
+\setCJKmainfont{Noto Serif CJK SC}[BoldFont={Noto Serif CJK SC Bold}, ItalicFont=]
+
+% 眉页信息
+\lhead{Mr.Yourname ID:YourID}
+\chead{\href{mailto:your@mail}{your@mail}}
+\rhead{\thepage}
+\lfoot{2023.8.3}
+\rfoot{Your School}
+
+% newtheorem
+\newtheorem{question}{Question}
+% ==================================
+% Fancy Packages & Styles
+% ==================================
+\include{note_setting.tex}
+%============================================================
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Large A Note on Whatev}
+    \par \text{\large Mr.Yourname ID:YourID}
+\end{center}
+
+% 设置目录
+%\newpage
+\pagenumbering{Roman}
+\setcounter{page}{1}
+\tableofcontents
+
+\setcounter{page}{1}
+\pagenumbering{arabic}
+%\newpage
+
+\section{One}
+
+\begin{definition}[This is definition]
+    \begin{equation}
+        E = mc^2
+    \end{equation}
+\end{definition}
+
+\begin{remark}[My remark]
+    \begin{equation}
+        i \hbar \partial_{t} \psi = H \psi
+    \end{equation}
+\end{remark}
+
+\begin{question}[Dummy Question]
+    KISS
+\end{question}
+
+\begin{review}[Dummy Review]
+    1+1=2
+\end{review}
+
+\begin{lemma}[Nope]
+    1+2=3
+\end{lemma}
+
+As u can c, it's not perfect.
+
+哈哈哈
+
+% 插入一个图片
+
+\section{Two}
+
+%\bibliography{citation}
+
+\end{document}
